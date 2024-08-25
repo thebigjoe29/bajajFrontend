@@ -2,23 +2,23 @@ import React from 'react';
 
 const ResponseDisplay = ({ data, selectedOptions }) => {
   return (
-    <div>
+    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
       {selectedOptions.includes('alphabets') && (
-        <div>
+        <div style={{ marginBottom: '1rem' }}>
           <h3>Alphabets:</h3>
-          <p>{data.alphabets.join(', ')}</p>
+          <p style={{ margin: 0 }}>{data.alphabets.join(', ')}</p>
         </div>
       )}
       {selectedOptions.includes('numbers') && (
-        <div>
+        <div style={{ marginBottom: '1rem' }}>
           <h3>Numbers:</h3>
-          <p>{data.numbers.join(', ')}</p>
+          <p style={{ margin: 0 }}>{data.numbers.join(', ')}</p>
         </div>
       )}
       {selectedOptions.includes('highest_lowercase_alphabet') && (
-        <div>
+        <div style={{ marginBottom: '1rem' }}>
           <h3>Highest Lowercase Alphabet:</h3>
-          <p>{data.highest_lowercase_alphabet.join(', ')}</p>
+          <p style={{ margin: 0 }}>{data.highest_lowercase_alphabet.join(', ')}</p>
         </div>
       )}
     </div>

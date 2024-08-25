@@ -10,7 +10,7 @@ const JsonInput = ({ onDataSubmit }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Basic input validation
     if (!userId || typeof userId !== 'string') {
       setError('Invalid or missing user_id. It must be a non-empty string.');
@@ -38,7 +38,7 @@ const JsonInput = ({ onDataSubmit }) => {
         email: email,
         roll_number: rollNumber,
       });
-      
+
       onDataSubmit(response.data);
       setError('');
     } catch (err) {
@@ -47,36 +47,86 @@ const JsonInput = ({ onDataSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <textarea
-        rows="5"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder='Enter comma-separated values, e.g., A,C,z,1,23'
-      />
-      <input
-        type="text"
-        placeholder="User ID"
-        value={userId}
-        onChange={(e) => setUserId(e.target.value)}
-        required
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Roll Number"
-        value={rollNumber}
-        onChange={(e) => setRollNumber(e.target.value)}
-        required
-      />
-      <button type="submit">Submit</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <form onSubmit={handleSubmit} style={{ maxWidth: '600px', margin: '0 auto' }}>
+      <div style={{ marginBottom: '1rem' }}>
+        <textarea
+          rows="5"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Enter comma-separated values, e.g., A,C,z,1,23"
+          style={{
+            width: '100%',
+            padding: '10px',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            boxSizing: 'border-box'
+          }}
+        />
+      </div>
+      <div style={{ marginBottom: '1rem' }}>
+        <input
+          type="text"
+          placeholder="User ID"
+          value={userId}
+          onChange={(e) => setUserId(e.target.value)}
+          required
+          style={{
+            width: '100%',
+            padding: '10px',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            boxSizing: 'border-box'
+          }}
+        />
+      </div>
+      <div style={{ marginBottom: '1rem' }}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          style={{
+            width: '100%',
+            padding: '10px',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            boxSizing: 'border-box'
+          }}
+        />
+      </div>
+      <div style={{ marginBottom: '1rem' }}>
+        <input
+          type="text"
+          placeholder="Roll Number"
+          value={rollNumber}
+          onChange={(e) => setRollNumber(e.target.value)}
+          required
+          style={{
+            width: '100%',
+            padding: '10px',
+            borderRadius: '4px',
+            border: '1px solid #ccc',
+            boxSizing: 'border-box'
+          }}
+        />
+      </div>
+      <button
+        type="submit"
+        style={{
+          width: '100%',
+          padding: '0.5rem',
+          fontSize: '1rem',
+          borderRadius: '4px',
+          border: 'none',
+          backgroundColor: '#007BFF',
+          color: '#fff',
+          cursor: 'pointer'
+        }}
+      >
+        Submit
+      </button>
+      {error && <p style={{ color: 'red', marginTop: '1rem' }}>{error}</p>}
     </form>
   );
 };
