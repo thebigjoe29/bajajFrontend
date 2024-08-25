@@ -126,6 +126,7 @@ const JsonInput = ({ onDataSubmit }) => {
       >
         Submit
       </button>
+      <h5>Note: Drag and multi-select options below, to see all data</h5>
       {error && <p style={{ color: 'red', marginTop: '1rem' }}>{error}</p>}
     </form>
   );
