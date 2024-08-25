@@ -6,7 +6,9 @@ import ResponseDisplay from './components/ResponseDisplay';
 function App() {
   const [apiResponse, setApiResponse] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState([]);
-
+  useEffect(() => {
+    document.title = '21BCE1444';
+  }, []);
   const handleDataSubmit = (data) => {
     setApiResponse(data);
   };
