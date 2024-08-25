@@ -32,7 +32,7 @@ const JsonInput = ({ onDataSubmit }) => {
 
     // Make API request using Axios
     try {
-      const response = await axios.post('http://localhost:3000/bfhl', {
+      const response = await axios.post('https://bajajbackend-kltt.onrender.com/bfhl', {
         data: data,
         user_id: userId,
         email: email,
